@@ -74,7 +74,8 @@ int main(int argc, char * argv[], char* envp[])
 
         dup2(pipezip[0], 0);
         close(pipezip[0]);
-        char* gpg_args[] = {"gpg", "-c", (char*) 0};
+        //char* gpg_args[] = {"gpg", "-c", (char*) 0};
+        char* gpg_args[] = {"gpg", (char*) 0};
         execve("/bin/gpg", gpg_args, envp);
     }
 
